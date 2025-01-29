@@ -10,9 +10,9 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
-  }
-  
-  @keyframes backgroundAnimation {
+}
+
+@keyframes backgroundAnimation {
     0% {
       background-position: 0% 50%;
     }
@@ -22,10 +22,10 @@ body {
     100% {
       background-position: 0% 50%;
     }
-  }
-  
-  /* Container Styling */
-  .container {
+}
+
+/* Container Styling */
+.container {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
     padding: 30px;
@@ -35,19 +35,19 @@ body {
     border: 2px solid #ffd1dc;
     max-width: 400px;
     width: 90%;
-  }
-  
-  /* Title Styling */
-  h1 {
+}
+
+/* Title Styling */
+h1 {
     color: #ff6f91;
     font-size: 3rem;
     margin-bottom: 20px;
     letter-spacing: 3px;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
     animation: fadeIn 1s ease;
-  }
-  
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-20px);
@@ -56,18 +56,18 @@ body {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  
-  /* Game Board */
-  .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 120px);
-    gap: 15px;
-    margin: 0 auto;
-    animation: slideIn 1s ease;
-  }
-  
-  @keyframes slideIn {
+}
+
+/* Game Board */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 15px;
+  margin: 0 auto;
+  animation: slideIn 1s ease;
+}
+
+@keyframes slideIn {
     from {
       transform: translateY(30px);
       opacity: 0;
@@ -76,10 +76,10 @@ body {
       transform: translateY(0);
       opacity: 1;
     }
-  }
-  
-  /* Cell Styling */
-  .cell {
+}
+
+/* Cell Styling */
+.cell {
     width: 120px;
     height: 120px;
     background: linear-gradient(145deg, #ffd1dc, #ffecf0);
@@ -95,47 +95,47 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     position: relative;
     overflow: hidden;
-  }
-  
-  .cell:hover {
+}
+
+.cell:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 -6px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cell.taken {
+}
+
+.cell.taken {
     pointer-events: none;
     color: #ff4a6e;
     background: linear-gradient(145deg, #ffccd4, #ffe6eb);
-  }
-  
-  /* Winning Cell Animation */
-  .winning-cell {
+}
+
+/* Winning Cell Animation */
+.winning-cell {
     animation: bounce 1s infinite alternate ease-in-out;
     background: linear-gradient(145deg, #ffecf0, #ffe4e6);
     color: #4caf50;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), inset 0 -6px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  @keyframes bounce {
+}
+
+@keyframes bounce {
     0% {
       transform: scale(1);
     }
     100% {
       transform: scale(1.2);
     }
-  }
-  
-  /* Victory Message Styling */
-  .victory {
+}
+
+/* Victory Message Styling */
+.victory {
     font-size: 2rem;
     font-weight: bold;
     color: #4caf50;
     text-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
     animation: celebration 2s ease infinite;
-  }
-  
-  @keyframes celebration {
+}
+
+@keyframes celebration {
     0% {
       transform: translateY(0);
     }
@@ -145,10 +145,10 @@ body {
     100% {
       transform: translateY(0);
     }
-  }
-  
-  /* Restart Button */
-  #restartButton {
+}
+
+/* Restart Button */
+#restartButton {
     padding: 12px 25px;
     border: none;
     background: linear-gradient(145deg, #ff6f91, #ff4a6e);
@@ -159,38 +159,37 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  #restartButton:hover {
+}
+
+#restartButton:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  #restartButton:active {
+}
+
+#restartButton:active {
     transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 500px) {
-    .game-board {
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .grid {
       grid-template-columns: repeat(3, 80px);
       gap: 10px;
     }
-  
+
     .cell {
       width: 80px;
       height: 80px;
       font-size: 1.8rem;
     }
-  
+
     h1 {
       font-size: 2rem;
     }
-  
+
     #restartButton {
       padding: 10px 20px;
       font-size: 1rem;
     }
-  }
-  
+}
